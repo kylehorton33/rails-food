@@ -8,7 +8,7 @@
   <% if i[:expires_on] < Date.today %>
     <td class="text-danger"><%= distance_of_time_in_words_to_now(i[:expires_on]) %> ago</td>
   <% elsif (i[:expires_on] - Date.today) < 7 %>
-    <td class="text-warning"><%= distance_of_time_in_words_to_now(i[:expires_on]) %></td>
+    <td class="text-warning">this week</td>
   <% else %>
     <td><%= distance_of_time_in_words_to_now(i[:expires_on]) %></td>
   <% end %>
