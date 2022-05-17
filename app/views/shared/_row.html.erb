@@ -12,7 +12,6 @@
   <% else %>
     <td><%= distance_of_time_in_words_to_now(i[:expires_on]) %></td>
   <% end %>
-
   <% if i[:location] == "fridge" %>
     <td><span class="badge rounded-pill bg-primary"><%= i[:location] %></span></td>
   <% elsif i[:location] == "freezer" %>
@@ -23,6 +22,8 @@
     <td><span class="badge rounded-pill bg-dark"><%= i[:location] %></span></td>
   <% end %>
   <td>
-    <i class="bi bi-info-circle"></i>
+    <%= link_to ingredient_path(i) do %>
+      <i class="bi bi-info-circle"></i>
+    <% end %>
   </td>
 </tr>
