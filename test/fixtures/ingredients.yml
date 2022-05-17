@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  quantity: 9.99
-  unit: MyString
-  expires_on: 2022-05-16
+  name: IngredientOne
+  quantity: 0.5
+  unit: UnitA
+  expires_on: 2022-05-30
   location: MyString
 
 two:
-  name: MyString
-  quantity: 9.99
-  unit: MyString
-  expires_on: 2022-05-16
+  name: IngredientTwo
+  quantity: 10
+  unit: UnitB
+  expires_on: 2023-05-16
   location: MyString
