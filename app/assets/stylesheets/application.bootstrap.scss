@@ -1,2 +1,13 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+.fridge {
+    background-color: $primary
+}
+
+.freezer {
+    background-color: $info;
+}
+
+.pantry {
+    background-color: $green-400;
+}
