@@ -1,7 +1,7 @@
 <!-- TODO https://www.colby.so/posts/filtering-tables-with-rails-and-hotwire -->
 <div class="container mt-4">
   <div class="input-group input-group-lg px-4">
-    <input type="text" class="form-control" placeholder="Search from 2139 ingredients...">
+    <input type="text" class="form-control" placeholder="Search from <%= @ingredients.count %> ingredients...">
   </div>
   <div class="mt-4 text-center">
     <%= link_to "Add a new Ingredient", new_ingredient_path, class: "btn btn-success" %>
