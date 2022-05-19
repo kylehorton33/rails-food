@@ -6,9 +6,15 @@
     <td><%= i[:quantity] %></td>
   <% end %>
   <% if i[:expires_on] < Date.today %>
-    <td class="text-danger"><%= distance_of_time_in_words_to_now(i[:expires_on]) %> ago</td>
+    <td>
+      <span class="badge rounded-pill bg-danger">
+        <%= distance_of_time_in_words_to_now(i[:expires_on]) %> ago
+      </span>
+    </td>
   <% elsif (i[:expires_on] - Date.today) < 7 %>
-    <td class="text-warning">this week</td>
+    <td>
+      <span class="badge rounded-pill bg-danger">this week</span>
+    </td>
   <% else %>
     <td><%= distance_of_time_in_words_to_now(i[:expires_on]) %></td>
   <% end %>
