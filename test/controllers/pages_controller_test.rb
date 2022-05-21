@@ -25,5 +25,14 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       assert_select "th", text: "Location"
     end
   end
+
+  test "items with zero quantity should be removed from table" do
+    get root_url
+    assert_select "tr", 3
+    patch use_all_ingredient_url(:id => ingredients(:one).id)
+    assert_redirected_to root_url
+    get root_url
+    assert_select "tr", 2
+  end
   
 end
