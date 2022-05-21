@@ -5,14 +5,17 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success
   end
+
   test "root should have search bar" do
     get root_url
     assert_select "input"
   end
+
   test "root should have table" do
     get root_url
     assert_select "table"
   end
+
   test "root table should have correct headers" do
     get root_url
     assert_select "table" do
@@ -22,4 +25,5 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       assert_select "th", text: "Location"
     end
   end
+  
 end
