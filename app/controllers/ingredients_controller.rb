@@ -3,7 +3,7 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients or /ingredients.json
   def index
-    @ingredients = Ingredient.all
+    page_not_found
   end
 
   # GET /ingredients/1 or /ingredients/1.json

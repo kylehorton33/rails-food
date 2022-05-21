@@ -5,9 +5,11 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     @ingredient = ingredients(:one)
   end
 
-  test "should get index" do
+  test "should not get index" do
     get ingredients_url
-    assert_response :success
+    assert_response :not_found
+    assert_select "title", "The page you were looking for doesn't exist (404)"
+    assert_select "a", "Take me home!"
   end
 
   test "should get new" do
