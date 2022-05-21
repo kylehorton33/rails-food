@@ -52,7 +52,7 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
 
     respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: "Ingredient was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "Ingredient was successfully destroyed." }
       format.json { head :no_content }
     end
   end

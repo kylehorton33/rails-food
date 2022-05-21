@@ -58,7 +58,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
       delete ingredient_url(@ingredient)
     end
 
-    assert_redirected_to ingredients_url
+    assert_redirected_to root_url
   end
 
 end
