@@ -50,7 +50,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update ingredient" do
     patch ingredient_url(@ingredient), params: { ingredient: { expires_on: @ingredient.expires_on, location: @ingredient.location, name: @ingredient.name, quantity: @ingredient.quantity, unit: @ingredient.unit } }
-    assert_redirected_to ingredient_url(@ingredient)
+    assert_redirected_to root_url
   end
 
   test "should destroy ingredient" do

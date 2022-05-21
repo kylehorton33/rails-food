@@ -22,7 +22,7 @@
   <% end %>
   <td><span class="badge rounded-pill <%= i[:location] %>"><%= i[:location] %></span></td>
   <td>
-    <%= link_to ingredient_path(i) do %>
+    <%= link_to edit_ingredient_url(i) do %>
       <i class="bi bi-info-circle"></i>
     <% end %>
   </td>
