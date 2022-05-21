@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: IngredientOne
+  name: INGREDIENT ONE
   quantity: 0.5
   unit: UnitA
   expires_on: 2022-05-30
   location: MyString
 
 two:
-  name: IngredientTwo
+  name: INGREDIENT TWO
   quantity: 10
   unit: UnitB
   expires_on: 2023-05-16

@@ -10,12 +10,15 @@ class IngredientTest < ActiveSupport::TestCase
   end
 
   test "ingredient with name violations should be invalid" do
-    @ingredient.name = "IngredientTwo"
+    @ingredient.name = "INGREDIENT TWO"
     assert @ingredient.invalid?, "Name must be unique"
     @ingredient.name = ""
     assert @ingredient.invalid?, "Name must not be blank"
-    @ingredient.name = "a"*41
+    @ingredient.name = "A"*41
     assert @ingredient.invalid?, "Name must not be less than 40 characters"
+    @ingredient.name = "InGREdIeNT"
+    assert_equal "INGREDIENT", @ingredient.name
+    assert @ingredient.valid?, "Name should only contain uppercase"
   end
   
   test "ingredient with quantity violations should be invalid" do

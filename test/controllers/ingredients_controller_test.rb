@@ -31,7 +31,7 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create ingredient" do
     assert_difference("Ingredient.count") do
-      @ingredient.name = "IngredientThree"
+      @ingredient.name = "INGREDIENT THREE"
       post ingredients_url, params: { ingredient: { expires_on: @ingredient.expires_on, location: @ingredient.location, name: @ingredient.name, quantity: @ingredient.quantity, unit: @ingredient.unit } }
     end
 
