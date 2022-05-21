@@ -18,11 +18,11 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
   test "new ingreident view should display correct components" do
     get new_ingredient_url
     assert_select "form", 1
-    assert_select "input#ingredient_name", 1
-    assert_select "input#ingredient_quantity", 1
-    assert_select "input#ingredient_unit", 1
+    assert_select "input#ingredient_name[placeholder=Name]", 1
+    assert_select "input#ingredient_quantity[placeholder=Quantity]", 1
+    assert_select "input#ingredient_unit[placeholder=Unit]", 1
     assert_select "input#ingredient_expires_on", 1
-    assert_select "input#ingredient_location", 1
+    assert_select "input#ingredient_location[placeholder=Location]", 1
   end
 
   test "should create ingredient" do
