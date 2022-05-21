@@ -13,7 +13,9 @@
     </td>
   <% elsif (i[:expires_on] - Date.today) < 7 %>
     <td>
-      <span class="badge rounded-pill bg-danger">this week</span>
+      <span class="badge rounded-pill bg-warning text-dark">
+        <%= distance_of_time_in_words_to_now(i[:expires_on], scope: 'datetime.distance_in_words.short') %>
+      </span>
     </td>
   <% else %>
     <td><%= distance_of_time_in_words_to_now(i[:expires_on]) %></td>

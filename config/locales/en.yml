@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  datetime:
+    distance_in_words:
+      short:
+        x_days: "%{count} days"
+        about_x_hours: "tomorrow"
+  
