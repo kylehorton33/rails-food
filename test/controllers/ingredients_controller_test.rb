@@ -15,6 +15,16 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "new ingreident view should display correct components" do
+    get new_ingredient_url
+    assert_select "form", 1
+    assert_select "input#ingredient_name", 1
+    assert_select "input#ingredient_quantity", 1
+    assert_select "input#ingredient_unit", 1
+    assert_select "input#ingredient_expires_on", 1
+    assert_select "input#ingredient_location", 1
+  end
+
   test "should create ingredient" do
     assert_difference("Ingredient.count") do
       @ingredient.name = "IngredientThree"
@@ -46,4 +56,5 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to ingredients_url
   end
+
 end
