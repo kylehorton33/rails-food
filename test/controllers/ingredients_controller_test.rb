@@ -47,6 +47,13 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     get edit_ingredient_url(@ingredient)
     assert_response :success
   end
+  
+  test "edit view should have expected components" do
+    get edit_ingredient_url(@ingredient)
+    assert_select "input[type=submit]", 1
+    assert_select "a", "Back to home"
+    assert_select "button.btn-primary", "USE ALL: #{@ingredient.name}"
+  end
 
   test "should update ingredient" do
     patch ingredient_url(@ingredient), params: { ingredient: { expires_on: @ingredient.expires_on, location: @ingredient.location, name: @ingredient.name, quantity: @ingredient.quantity, unit: @ingredient.unit } }

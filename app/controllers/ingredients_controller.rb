@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: %i[ show edit update destroy ]
+  before_action :set_ingredient, only: %i[ show edit update destroy use_all ]
 
   # GET /ingredients or /ingredients.json
   def index
@@ -54,6 +54,18 @@ class IngredientsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_url, notice: "Ingredient was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def use_all
+    respond_to do |format|
+      if @ingredient.update(quantity: 0)
+        format.html { redirect_to root_url, notice: "Successfully used!" }
+        format.json { render :show, status: :ok, location: @ingredient }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
+      end
     end
   end
 

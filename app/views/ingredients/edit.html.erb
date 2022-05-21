@@ -1,10 +1,11 @@
 <h1>Editing ingredient</h1>
-
 <%= render "form", ingredient: @ingredient %>
-
+<div class="row text-center mt-2">
+  <%= button_to [:use_all, @ingredient], class: "btn btn-primary" do %>
+    USE ALL: <%= @ingredient.name %>
+  <% end %>
+</div>
 <br>
-
 <div>
-  <%= link_to "Show this ingredient", @ingredient %> |
-  <%= link_to "Back to ingredients", ingredients_path %>
+  <%= link_to "Back to home", root_path %>
 </div>
