@@ -6,6 +6,7 @@ one:
   unit: UnitA
   expires_on: 2022-05-30
   location: MyString
+  category_id: one
 
 two:
   name: INGREDIENT TWO
@@ -13,3 +14,4 @@ two:
   unit: UnitB
   expires_on: 2023-05-16
   location: MyString
+  category_id: one

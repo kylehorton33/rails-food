@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: %i[ show edit update destroy use_all ]
   before_action :get_units, only: %i[ new edit ]
+  before_action :get_categories, only: %i[ new edit category ]
 
   # GET /ingredients or /ingredients.json
   def index
@@ -70,6 +71,12 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def category
+    @category = Category.find_by(name: params[:category_name])
+    @ingredients = Ingredient.where(:category_id => @category.id)
+    render "pages/home"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient
@@ -91,8 +98,12 @@ class IngredientsController < ApplicationController
       ]
     end
 
+    def get_categories
+      @categories = Category.all
+    end
+
     # Only allow a list of trusted parameters through.
     def ingredient_params
-      params.require(:ingredient).permit(:name, :quantity, :unit, :expires_on, :location)
+      params.require(:ingredient).permit(:name, :quantity, :unit, :expires_on, :location, :category_id)
     end
 end

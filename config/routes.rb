@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  get 'category/:category_name' => 'ingredients#category', :as => :get_category_ingredients
   get '404', :to => 'application#page_not_found'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
