@@ -11,3 +11,9 @@
 .pantry {
     background-color: $green-400;
 }
+
+@media (max-width: 800px) {
+    .ingredient-row {
+        font-size: 0.6rem;
+    }
+}
