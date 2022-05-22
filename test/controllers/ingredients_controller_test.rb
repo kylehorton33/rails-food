@@ -25,8 +25,12 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     assert_select "select#ingredient_unit" do
       assert_select "option", 10
     end
-    assert_select "input#ingredient_expires_on", 1
-    assert_select "input[type=radio]", 3
+    assert_select ".location-radios" do
+      assert_select "input[type=radio]", 3
+    end
+    assert_select ".category-radios" do
+      assert_select "input[type=radio]", 2
+    end
     assert_select "label[for=ingredient_expires_on]", "Expires on"
   end
 

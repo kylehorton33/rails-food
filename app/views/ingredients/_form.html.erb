@@ -34,7 +34,7 @@
       <%= form.date_field :expires_on, class: "form-control" %>
     </div>
   </div>
-  <div class="row form-group mt-2">
+  <div class="row form-group mt-2 location-radios">
     <%= form.label :location, class: "col-2 col-form-label" %>
     <%= form.collection_radio_buttons :location, [
       ['fridge', 'fridge'],
@@ -45,7 +45,7 @@
       
     end %>
   </div>
-  <div class="row form-group mt-2">
+  <div class="row form-group mt-2 category-radios">
     <%= form.label :category_id, class: "col-2 col-form-label" %>
     <%= form.collection_radio_buttons :category_id, Category.all, :id, :name do |b|
       
