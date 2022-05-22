@@ -73,7 +73,7 @@ class IngredientsController < ApplicationController
 
   def category
     @category = Category.find_by(name: params[:category_name])
-    @ingredients = Ingredient.where(:category_id => @category.id)
+    @ingredients = Ingredient.where(:category_id => @category.id).order(:expires_on)
     render "pages/home"
   end
 
