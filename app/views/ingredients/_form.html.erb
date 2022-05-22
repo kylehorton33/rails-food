@@ -35,12 +35,21 @@
     </div>
   </div>
   <div class="row form-group mt-2">
+    <%= form.label :location, class: "col-2 col-form-label" %>
     <%= form.collection_radio_buttons :location, [
       ['fridge', 'fridge'],
       ['freezer', 'freezer'],
       ['pantry', 'pantry']], :first, :last do |b|
       
       b.label(:"data-value" => b.value, class: "col text-center") { b.radio_button + b.text }
+      
+    end %>
+  </div>
+  <div class="row form-group mt-2">
+    <%= form.label :category_id, class: "col-2 col-form-label" %>
+    <%= form.collection_radio_buttons :category_id, Category.all, :id, :name do |b|
+      
+      b.label(:"data-value" => b.value, class: "col-3") { b.radio_button + b.text }
       
     end %>
   </div>
