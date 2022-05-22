@@ -11,6 +11,13 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "input"
   end
 
+  test "search should yield subset of results" do
+    get root_url
+    assert_select "tbody tr", 2
+    get root_url(:search => ingredients(:one).name)
+    assert_select "tbody tr", 1
+  end
+
   test "root should have table" do
     get root_url
     assert_select "table"
