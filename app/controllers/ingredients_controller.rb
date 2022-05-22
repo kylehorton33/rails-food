@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: %i[ show edit update destroy use_all ]
+  before_action :get_units, only: %i[ new edit ]
 
   # GET /ingredients or /ingredients.json
   def index
@@ -73,6 +74,21 @@ class IngredientsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient
       @ingredient = Ingredient.find(params[:id])
+    end
+
+    def get_units
+      @units = [
+        ["", "NONE"],
+        ["ounce", "ounce"],
+        ["pound", "pound"],
+        ["gallon", "gallon"],
+        ["bottle", "bottle"],
+        ["box", "box"],
+        ["jar", "jar"],
+        ["bunch", "bunch"],
+        ["bag", "bag"],
+        ["can", "can"]
+      ]
     end
 
     # Only allow a list of trusted parameters through.

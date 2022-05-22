@@ -22,7 +22,9 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
     assert_select "form", 1
     assert_select "input#ingredient_name[placeholder=Name]", 1
     assert_select "input#ingredient_quantity[placeholder=Quantity]", 1
-    assert_select "input#ingredient_unit[placeholder=Unit]", 1
+    assert_select "select#ingredient_unit" do
+      assert_select "option", 10
+    end
     assert_select "input#ingredient_expires_on", 1
     assert_select "input[type=radio]", 3
     assert_select "label[for=ingredient_expires_on]", "Expires on"

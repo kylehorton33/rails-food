@@ -20,7 +20,7 @@
       <%= form.number_field :quantity, class: "form-control", placeholder: "Quantity" %>
     </div>
     <div class="col px-0">
-      <%= form.text_field :unit, class: "form-control", placeholder: "Unit" %>
+      <%= form.collection_select :unit, @units, :first, :last, {}, {:class => "form-select" } %>
     </div>
     <small class="form-text text-muted">
       Quantity and unit cannot be blank
