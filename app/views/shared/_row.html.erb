@@ -1,7 +1,11 @@
 <tr class="ingredient-row">
   <td><%= i[:name] %></td>
   <% if i[:unit] %>
-    <td><%= pluralize(i[:quantity], i[:unit]) %></td>
+    <% if i[:quantity] == 0.5 %>
+      <td>1&frasl;2 <%= i[:unit] %></td>
+    <% else %>
+      <td><%= pluralize(i[:quantity].to_i, i[:unit]) %></td>
+    <% end %>
   <% else %>
     <td><%= i[:quantity] %></td>
   <% end %>
