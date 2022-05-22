@@ -34,8 +34,15 @@
       <%= form.date_field :expires_on, class: "form-control" %>
     </div>
   </div>
-  <div class="row mt-2">
-    <%= form.text_field :location, class: "form-control", placeholder: "Location" %>
+  <div class="row form-group mt-2">
+    <%= form.collection_radio_buttons :location, [
+      ['fridge', 'fridge'],
+      ['freezer', 'freezer'],
+      ['pantry', 'pantry']], :first, :last do |b|
+      
+      b.label(:"data-value" => b.value, class: "col text-center") { b.radio_button + b.text }
+      
+    end %>
   </div>
   <div class="row mt-2 w-50 mx-auto">
     <%= form.submit %>
